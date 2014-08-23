@@ -1,6 +1,6 @@
-# Csvtomd
+# CsvToMd
 
-TODO: Write a gem description
+Convert CSV text to markdown style table.
 
 ## Installation
 
@@ -18,7 +18,66 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Basic
+
+```ruby
+require "csvtomd"
+
+csv = <<CSV
+head1, head2, head3, head4
+line1-1, line1-2, line1-3, line1-4
+line2-1, line2-2, line2-3, line2-4
+line3-1, line3-2, line3-3, line3-4
+CSV
+
+puts CsvToMd.convert(csv)
+```
+
+Then, got markdown style table.
+
+```md
+|head1|head2|head3|head4|
+|---|---|---|---|
+|line1-1|line1-2|line1-3|line1-4|
+|line2-1|line2-2|line2-3|line2-4|
+|line3-1|line3-2|line3-3|line3-4|
+```
+
+|head1|head2|head3|head4|
+|---|---|---|---|
+|line1-1|line1-2|line1-3|line1-4|
+|line2-1|line2-2|line2-3|line2-4|
+|line3-1|line3-2|line3-3|line3-4|
+
+### Advanced
+
+`CsvToMd` allows empty cells in CSV text.
+
+```ruby
+require "csvtomd"
+
+csv = <<CSV
+, , , head,
+, ,
+,
+CSV
+
+puts CsvToMd.convert(csv)
+```
+
+results,
+
+```md
+||||head||
+|---|---|---|---|---|
+||||||
+||||||
+```
+
+||||head||
+|---|---|---|---|---|
+||||||
+||||||
 
 ## Contributing
 
