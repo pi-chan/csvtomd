@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["xoyip@piyox.info"]
   spec.summary       = %q{Convert CSV text to markdown style table.}
   spec.description   = {}
-  spec.homepage      = "git@github.com:xoyip/csvtomd.git"
+  spec.homepage      = "https://github.com/xoyip/csvtomd"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
