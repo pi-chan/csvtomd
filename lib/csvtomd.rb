@@ -6,7 +6,7 @@ module CsvToMd
       return nil unless text.class == String
       
       @column_count = nil
-      @text = text.gsub(" ", "")
+      @text = text
 
       if @text.lines.count > 1
         table_lines = @text.lines.map { |l| convert_line(l) }
